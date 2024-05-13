@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 
 const app = express();
-const { DATABASE_URL, PORT = 3000 } = process.env;
+const { DATABASE_URL, PORT} = process.env;
 
 // MIDDLEWARE
 const cors = require('cors')
