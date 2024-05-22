@@ -1,5 +1,5 @@
 const express = require('express')
-const router = express.Router()
+const Router = express.Router()
 const User = require('../models/user.js');
 // const User = require('../models/user.js')
 
@@ -10,4 +10,16 @@ const User = require('../models/user.js');
 //   res.render('user.json')
 // })
 
-module.exports = router
+Router.post('/', async (req, res) => {
+  console.log(req.body)
+  console.log('POST REQUEST MADE WITH: ', req.body)
+  try {
+    const slot = await User.create(req.body)
+    res.redirect('/LoginPage')
+  } catch (err) {
+    console.log('ERROR WITH Slots POST: ', err)
+    res.status(500).send(err)
+  }
+})
+
+module.exports = Router

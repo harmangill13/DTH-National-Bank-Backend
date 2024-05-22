@@ -14,7 +14,7 @@ const morgan = require('morgan')
 // CONTROLLERS
 
 const userController = require('./controllers/user.js');
-app.use('/user', userController);
+app.use('/create', userController);
 
 // MODELS
 app.use(express.json());
